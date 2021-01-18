@@ -1,5 +1,6 @@
-# RetinaFace in PyTorch
+# 基于Pytorch_Retinaface的车牌定位及关键点检测
 
+本项目基于[Pytorch_Retinaface](https://github.com/biubug6/Pytorch_Retinaface)修改，完成车牌的定位及四个关键点检测（车牌的左上，右上，右下及左下角点），以此通过透视变换完成车牌的对齐，可使用mobilenet0.25或resnet50作为骨干网络进行实现。
 A [PyTorch](https://pytorch.org/) implementation of [RetinaFace: Single-stage Dense Face Localisation in the Wild](https://arxiv.org/abs/1905.00641). Model size only 1.7M, when Retinaface use mobilenet0.25 as backbone net. We also provide resnet50 as backbone net to get better result. The official code in Mxnet can be found [here](https://github.com/deepinsight/insightface/tree/master/RetinaFace).
 
 ## Mobile or Edge device deploy

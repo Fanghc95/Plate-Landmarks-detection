@@ -1,43 +1,11 @@
 # 基于Pytorch_Retinaface的车牌定位及关键点检测
 
 本项目基于[Pytorch_Retinaface](https://github.com/biubug6/Pytorch_Retinaface)修改，完成车牌的定位及四个关键点检测（车牌的左上，右上，右下及左下角点），以此通过透视变换完成车牌的对齐，可使用mobilenet0.25或resnet50作为骨干网络进行实现。
-A [PyTorch](https://pytorch.org/) implementation of [RetinaFace: Single-stage Dense Face Localisation in the Wild](https://arxiv.org/abs/1905.00641). Model size only 1.7M, when Retinaface use mobilenet0.25 as backbone net. We also provide resnet50 as backbone net to get better result. The official code in Mxnet can be found [here](https://github.com/deepinsight/insightface/tree/master/RetinaFace).
 
-## Mobile or Edge device deploy
-We also provide a set of Face Detector for edge device in [here](https://github.com/biubug6/Face-Detector-1MB-with-landmark) from python training to C++ inference.
+## 使用
 
-## WiderFace Val Performance in single scale When using Resnet50 as backbone net.
-| Style | easy | medium | hard |
-|:-|:-:|:-:|:-:|
-| Pytorch (same parameter with Mxnet) | 94.82 % | 93.84% | 89.60% |
-| Pytorch (original image scale) | 95.48% | 94.04% | 84.43% |
-| Mxnet | 94.86% | 93.87% | 88.33% |
-| Mxnet(original image scale) | 94.97% | 93.89% | 82.27% |
+说明：本项目训练用数据集格式参考widerface进行制作
 
-## WiderFace Val Performance in single scale When using Mobilenet0.25 as backbone net.
-| Style | easy | medium | hard |
-|:-|:-:|:-:|:-:|
-| Pytorch (same parameter with Mxnet) | 88.67% | 87.09% | 80.99% |
-| Pytorch (original image scale) | 90.70% | 88.16% | 73.82% |
-| Mxnet | 88.72% | 86.97% | 79.19% |
-| Mxnet(original image scale) | 89.58% | 87.11% | 69.12% |
-<p align="center"><img src="curve/Widerface.jpg" width="640"\></p>
-
-## FDDB Performance.
-| FDDB(pytorch) | performance |
-|:-|:-:|
-| Mobilenet0.25 | 98.64% |
-| Resnet50 | 99.22% |
-<p align="center"><img src="curve/FDDB.png" width="640"\></p>
-
-### Contents
-- [Installation](#installation)
-- [Training](#training)
-- [Evaluation](#evaluation)
-- [TensorRT](#tensorrt)
-- [References](#references)
-
-## Installation
 ##### Clone and install
 1. git clone https://github.com/biubug6/Pytorch_Retinaface.git
 

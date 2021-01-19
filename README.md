@@ -38,7 +38,7 @@ txt标签格式如下：
 每张图像数据占两行，第一行标识图像文件命，第二行(x,y)为车牌检测框左上角坐标，(w,h)为车牌检测框的宽，高。(x1,y1)-(x4,y4)依次表示车牌左上，右上，右下，左下四个角点的坐标
 
 ### 训练
-本项目提供基于restnet50和mobilenet0.25为骨干网络的模型训练。这里提供原项目预训练的Mobilenet0.25模型[百度](https://pan.baidu.com/s/12h97Fy1RYuqMMIV-RpzdPg) 密码：fstq。下载的模型放在weights目录下。
+本项目提供基于restnet50和mobilenet0.25为骨干网络的模型训练。这里提供原项目预训练的Mobilenet0.25模型[百度](https://pan.baidu.com/s/12h97Fy1RYuqMMIV-RpzdPg) 密码：fstq。下载的模型放在``./weights``目录下。
 
 1. 训练之前，可在 ``data/config.py and train.py``中对训练的一些参数进行修改，例如GPU数量，batch_size等参数。
 
@@ -54,8 +54,8 @@ txt标签格式如下：
 ```Shell
 python detect.py --trained_model [weight_file] --network [mobile0.25 or resnet50] --input [path to test_image]
 ```
-其他输入参数具体查看``./detect.py``，检测结果保存到``./res.jpg`
-<p align="center"><img src="res/res1.jpg" width="570"\></p>
+其他输入参数具体查看``./detect.py``，检测结果保存到``./res.jpg``
+<p align="center"><img src="res/rest1.jpg" width="570"\></p>
 <p align="center"><img src="res/res2.jpg" width="570"\></p>
 <p align="center"><img src="res/res3.jpg" width="570"\></p>
 

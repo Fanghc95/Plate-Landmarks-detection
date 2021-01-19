@@ -6,19 +6,17 @@
 
 说明：本项目训练用数据集格式参考widerface进行制作
 
-##### Clone and install
-1. git clone https://github.com/biubug6/Pytorch_Retinaface.git
+###克隆工程
+
+1. git clone https://github.com/Fanghc95/Plate-keypoints-detection.git
 
 2. Pytorch version 1.1.0+ and torchvision 0.3.0+ are needed.
 
 3. Codes are based on Python 3
 
-##### Data
-1. Download the [WIDERFACE](http://shuoyang1213.me/WIDERFACE/WiderFace_Results.html) dataset.
+###准备数据
 
-2. Download annotations (face bounding boxes & five facial landmarks) from [baidu cloud](https://pan.baidu.com/s/1Laby0EctfuJGgGMgRRgykA) or [dropbox](https://www.dropbox.com/s/7j70r3eeepe4r2g/retinaface_gt_v1.1.zip?dl=0)
-
-3. Organise the dataset directory as follows:
+该项目数据集基于widerface制作，其目录格式如下
 
 ```Shell
   ./data/widerface/
@@ -29,6 +27,25 @@
       images/
       wider_val.txt
 ```
+
+train为训练数据文件夹，val为验证数据文件夹，文件夹下images目录放入图像数据，txt文件为标签数据
+
+txt标签格式如下：
+
+```Shell
+  # [image name]
+  x y w h x1 y1 0.0 x2 y2 0.0 x3 y3 0.0 x4 y4 0.0 
+```
+
+每张图像数据占两行，第一行标识图像文件命，第二行(x,y)为车牌检测框左上角坐标，(w,h)为车牌检测框的宽，高。(x1,y1)-(x4,y4)依次表示车牌左上，右上，右下，左下四个角点的坐标
+##### Data
+1. Download the [WIDERFACE](http://shuoyang1213.me/WIDERFACE/WiderFace_Results.html) dataset.
+
+2. Download annotations (face bounding boxes & five facial landmarks) from [baidu cloud](https://pan.baidu.com/s/1Laby0EctfuJGgGMgRRgykA) or [dropbox](https://www.dropbox.com/s/7j70r3eeepe4r2g/retinaface_gt_v1.1.zip?dl=0)
+
+3. Organise the dataset directory as follows:
+
+
 ps: wider_val.txt only include val file names but not label information.
 
 ##### Data1

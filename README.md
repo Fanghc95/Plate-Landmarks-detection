@@ -55,9 +55,9 @@ txt标签格式如下：
 python detect.py --trained_model [weight_file] --network [mobile0.25 or resnet50] --input [path to test_image]
 ```
 其他输入参数具体查看``./detect.py``，检测结果保存到``./res.jpg`
-<p align="center"><img src="res/test1.jpg" width="570"\></p>
-<p align="center"><img src="res/test.jpg" width="570"\></p>
-<p align="center"><img src="res/test3.jpg" width="570"\></p>
+<p align="center"><img src="res/res1.jpg" width="570"\></p>
+<p align="center"><img src="res/res2.jpg" width="570"\></p>
+<p align="center"><img src="res/res3.jpg" width="570"\></p>
 
 ### TensorRT
 -[TensorRT](https://github.com/wang-xinyu/tensorrtx/tree/master/retinaface)

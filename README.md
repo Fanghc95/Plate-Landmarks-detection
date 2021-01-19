@@ -50,22 +50,14 @@ txt标签格式如下：
 3. 模型将保存在``./weights``下
 
 
-## Evaluation
-### Evaluation widerface val
-1. Generate txt file
+### 测试
 ```Shell
-python test_widerface.py --trained_model weight_file --network mobile0.25 or resnet50
+python detect.py --trained_model [weight_file] --network [mobile0.25 or resnet50] --input [path to test_image]
 ```
-2. Evaluate txt results. Demo come from [Here](https://github.com/wondervictor/WiderFace-Evaluation)
-```Shell
-cd ./widerface_evaluate
-python setup.py build_ext --inplace
-python evaluation.py
-```
-3. You can also use widerface official Matlab evaluate demo in [Here](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/WiderFace_Results.html)
+其他输入参数具体查看``./detect.py``，检测结果保存到``./res.jpg`
+<p align="center"><img src="curve/1.jpg" width="640"\></p>
 
-
-## TensorRT
+### TensorRT
 -[TensorRT](https://github.com/wang-xinyu/tensorrtx/tree/master/retinaface)
 
 ## References

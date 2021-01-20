@@ -52,7 +52,9 @@ txt标签格式如下：
 
 ### 测试
 ```Shell
-python detect.py --trained_model [weight_file] --network [mobile0.25 or resnet50] --input [path to test_image]
+python detect.py --trained_model [weight_file] \
+                 --network [mobile0.25 or resnet50] \
+                 --input [path to test_image]
 ```
 其他输入参数具体查看``./detect.py``，检测结果保存到``./res.jpg``
 <p align="center"><img src="res/rest1.jpg" width="570"\></p>

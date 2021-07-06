@@ -38,7 +38,9 @@ txt标签格式如下：
 每张图像数据占两行，第一行标识图像文件命，第二行(x,y)为车牌检测框左上角坐标，(w,h)为车牌检测框的宽，高。(x1,y1)-(x4,y4)依次表示车牌左上，右上，右下，左下四个角点的坐标
 
 ### 训练
-本项目提供基于restnet50和mobilenet0.25为骨干网络的模型训练。这里提供原项目预训练的Mobilenet0.25模型[百度](https://pan.baidu.com/s/12h97Fy1RYuqMMIV-RpzdPg) 密码：fstq。下载的模型放在``./weights``目录下。
+本项目提供基于restnet50和mobilenet0.25为骨干网络的模型训练。这里提供原项目预训练的Mobilenet0.25模型[百度](https://pan.baidu.com/s/1ewT-Nyn7bUXWaV_0UEJfDw) 密码：mkjt。下载的模型放在``./weights``目录下。
+
+网盘链接中的Resnet50_epoch_40.pth及mobilenet0.25_epoch_15.pth是我使用CCPD数据训练的模型，该模型训练迭代次数未完全结束，但由于训练数据量比较大，目前训练的模型已具有一定的检测效果，可直接在detect.py中进行测试。
 
 1. 训练之前，可在 ``data/config.py and train.py``中对训练的一些参数进行修改，例如GPU数量，batch_size等参数。
 
@@ -62,9 +64,28 @@ python detect.py --trained_model [weight_file] \
 <p align="center"><img src="res/res3.jpg" width="570"\></p>
 
 ### TensorRT
--[TensorRT](https://github.com/wang-xinyu/tensorrtx/tree/master/retinaface)
+本项目根据[TensorRT](https://github.com/wang-xinyu/tensorrtx/tree/master/retinaface)工程对retinaFace的TensorRT部署代码进行修改，使该工程能为车牌任务服务。
 
-## References
+具体流程：
+ ```Shell
+  #执行detect.py后，将生成retinaface.pth 文件，使用该模型参数文件生成wts文件
+  python genwts.py
+  #生成retinafacePlate.wts文件
+  mv retinafacePlate.wts ./trt #将生成的wts文件移入TensorRT工程目录
+  cd ./trt #进入TensorRT工程目录
+  #编辑CMakeLists.txt,配置TensorRT路径
+  mkdir build && cd build
+  cmake ../ && make -j8 #编译工程
+  ./retina_mnet -s #根据wts文件生成engine文件
+  ./retina_mnet -d #执行engine文件，加载并测试当前目录下test.jpg，输出检测结果图像
+  ```
+目前该项目仅修改了基于MobileNet的Retinaface部署代码，大家多多Star。后续会更新ResNet50的
+
+后续优化：
+1.自定义输入测试图像名称
+2.支持Resnet50部署方案
+
+### 引用
 - [FaceBoxes](https://github.com/zisianw/FaceBoxes.PyTorch)
 - [Retinaface (mxnet)](https://github.com/deepinsight/insightface/tree/master/RetinaFace)
 ```

@@ -317,7 +317,7 @@ int main(int argc, char** argv) {
     //for (int i = 0; i < 3 * INPUT_H * INPUT_W; i++)
     //    data[i] = 1.0;
 
-    cv::Mat img = cv::imread("worlds-largest-selfie.jpg");
+    cv::Mat img = cv::imread("test.jpg");
     cv::Mat pr_img = preprocess_img(img, INPUT_W, INPUT_H);
     //cv::imwrite("preprocessed.jpg", pr_img);
 

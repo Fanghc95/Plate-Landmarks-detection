@@ -18,7 +18,7 @@ def main():
     out = net(tmp)
     print('output:', out)
 
-    if os.path.exists('retinaface.wts'):
+    if os.path.exists('retinafacePlate.wts'):
         return
     f = open("retinaface.wts", 'w')
     f.write("{}\n".format(len(net.state_dict().keys())))

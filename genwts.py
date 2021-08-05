@@ -4,7 +4,7 @@ import torchvision
 import os
 import struct
 #from torchsummary import summary
-
+# mod
 def main():
     print('cuda device count: ', torch.cuda.device_count())
     device = 'cuda:1'

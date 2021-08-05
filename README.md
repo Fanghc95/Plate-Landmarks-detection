@@ -2,7 +2,7 @@
 
 本项目基于[Pytorch_Retinaface](https://github.com/biubug6/Pytorch_Retinaface)修改，完成车牌的定位及四个关键点检测（车牌的左上，右上，右下及左下角点），以此通过透视变换完成车牌的对齐，可使用mobilenet0.25或resnet50作为骨干网络进行实现。
 
-本项目已集成TensorRT部署方案，训练后的Retinaface模型可部署在C++的TensorRT环境下，实现GPU推力加速。
+本项目已集成TensorRT部署方案，训练后的Retinaface模型可部署在C++的TensorRT环境下，实现GPU推理加速。
 
 如果该项目对你有所帮助，点个星星吧
 ## 使用
